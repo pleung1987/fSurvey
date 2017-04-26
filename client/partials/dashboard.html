@@ -1,0 +1,32 @@
+<!-- Logged in User -->
+<h3 style="color: red; margin-left:40px" ng-if="message" ng-bind="message"></h3>
+ <p style= "text-align: right; margin-right: 100px;"><a href="#!/">Logout</a></p>
+ <br>
+<h4 style="margin-left:300px"><a href="#!/question">Create a New Poll</a></h4>
+<!--search filter  -->
+<div class="col-md-3 col-sm-3">
+        <input type="text" style="margin-left: 50px" placeholder="Filter question" ng-model="questionFilter">
+        <!-- create ng-model filter and call it in the div class ng-repeat | filter: "ng-model filter name" -->
+    </div>
+<!-- show table -->
+<div class="row">
+    <table style="margin-left:50px; margin-right:50px"class="table table-hover customer">
+        <thead>
+            <tr>
+                <th>  Name</th>
+                <th>  Survey Question</th>
+                <th>  Date Posted</th>
+                <th>  Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="question in questions | filter: questionFilter">
+                <td>{{question.creator}}</td>
+                <td><a href="#!/show/{{question._id}}">{{question.question}}</a></td>
+                <td>{{question.createdAt | date:'MMM-dd-yyyy'}}</td>
+                <td ng-if= "question.creator == user"><button type="button" class="btn btn-danger" ng-click="delete(question)">Delete</button></td>
+                <!-- add ng-if show at the td of delete -->
+            </tr>
+        </tbody>
+    </table>
+</div>

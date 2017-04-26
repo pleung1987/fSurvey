@@ -1,0 +1,11 @@
+<h1 style="margin-left:200px">Login</h1>
+<div class="row">
+    <div class="col-md-4 col-md-offset-3">
+    <p style="color: red; margin-left:40px" ng-if="message" ng-bind="message"></p>
+        <form class="form-inline" ng-submit="logUser()" method="post">
+            <label for="name"></label>
+            <input type="text" class="form-control" id="newUser.name" ng-model="newUser.name" required>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>

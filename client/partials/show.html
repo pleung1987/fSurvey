@@ -1,0 +1,46 @@
+<!-- Logged in User -->
+<h3 style="color: red; margin-left:40px" ng-if="message" ng-bind="message"></h3>
+<h4><a href="#!/dashboard" style="margin-left:50px;">Go Back to Polls</a></h4>
+
+
+<!-- show table -->
+<div class="row" style="margin-left: 50px;">
+    <div class="question">
+        <h1>question:   {{question.question}}</h1>
+        <h4>Click the Vote Button to Choose One</h4>
+    </div>
+    <br>
+</div>
+<div class="row">
+    <table style="margin-left:50px; margin-right:50px" class="table table-hover customer">
+        <thead>
+            <tr>
+                <th>  Option</th>
+                <th>  Current Count of Vote</th>
+                <th>  Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{question.option1}}</td>
+                <td>{{question.opt1Count}}</td>
+                <td><button type="button" class="btn btn-primary" ng-click="clickVote1(question)">Vote</button></td>
+            </tr>
+            <tr>
+                <td>{{question.option2}}</td>
+                <td>{{question.opt2Count}}</td>
+                <td><button type="button" class="btn btn-primary" ng-click="clickVote2(question)">Vote</button></td>
+            </tr>
+            <tr>
+                <td>{{question.option3}}</td>
+                <td>{{question.opt3Count}}</td>
+                <td><button type="button" class="btn btn-primary" ng-click="clickVote3(question)">Vote</button></td>
+            </tr>
+            <tr>
+                <td>{{question.option4}}</td>
+                <td>{{question.opt4Count}}</td>
+                <td><button type="button" class="btn btn-primary" ng-click="clickVote4(question)">Vote</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
